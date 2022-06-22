@@ -9,4 +9,9 @@ describe("isValidPlate - basic functionality", () => {
     const actual = isValidPlate("");
     expect(actual).to.deep.equal(expected)
   });
+  it("Return response.isValid : false when the string has more than 7 chars", () => {
+    const expected = { isValid: false, letters: null, numbers: null };
+    const actual = isValidPlate("AAAA12345");
+    expect(actual).to.deep.equal(expected)
+  });
 });

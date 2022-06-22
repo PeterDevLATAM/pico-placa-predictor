@@ -1,3 +1,4 @@
 export const isValidPlate = (str) => {
-  if (str === "") return { isValid: false, letters: null, numbers: null };
+  if (str === "" || str.length > 7)
+    return { isValid: false, letters: null, numbers: null };
 };
