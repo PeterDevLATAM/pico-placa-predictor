@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "unit-test": "",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +36,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/register": "^7.17.7",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
   }
 }

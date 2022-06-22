@@ -10,8 +10,8 @@ export const data = {
       end: "09:30",
     },
     secondPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "16:00",
+      end: "21:00",
     },
   },
   1: {
