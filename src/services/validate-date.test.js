@@ -1,7 +1,7 @@
 /* eslint-disable jest/valid-expect */
 
 import { expect } from "chai";
-import { isValidDate } from "./validate-date";
+import { isValidDate } from "./validate-date.js";
 
 describe("isValidDate - basic functionality", () => {
   it("Return response.isValid : false when passed an empty string", () => {

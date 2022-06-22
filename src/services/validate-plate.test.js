@@ -1,7 +1,7 @@
 /* eslint-disable jest/valid-expect */
 
 import { expect } from "chai";
-import { isValidPlate } from "./validate-plate";
+import { isValidPlate } from "./validate-plate.js";
 
 describe("isValidPlate - basic functionality", () => {
   it("Return response.isValid : false when passed an empty string", () => {

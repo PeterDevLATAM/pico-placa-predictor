@@ -1,6 +1,6 @@
-export const data = {
+export const DATA = {
 
-  0: {
+  1: {
     forbidenPlates: {
       1: true,
       2: true,
@@ -14,7 +14,7 @@ export const data = {
       end: "21:00",
     },
   },
-  1: {
+  2: {
     forbidenPlates: {
       3: true,
       4: true,
@@ -28,7 +28,7 @@ export const data = {
       end: "09:30",
     },
   },
-  2: {
+  3: {
     forbidenPlates: {
       5: true,
       6: true,
@@ -42,7 +42,7 @@ export const data = {
       end: "09:30",
     },
   },
-  3: {
+  4: {
     forbidenPlates: {
       7: true,
       8: true,
@@ -56,7 +56,7 @@ export const data = {
       end: "09:30",
     },
   },
-  4: {
+  5: {
     forbidenPlates: {
       9: true,
       0: true,

@@ -1,7 +1,7 @@
 /* eslint-disable jest/valid-expect */
 
 import { expect } from "chai";
-import { isAllowed } from "./check-if-allowed";
+import { isAllowed } from "./check-if-allowed.js";
 
 describe("isAllowed - basic functionality", () => {
   it("Return undefined when passed an empty string", () => {
@@ -20,10 +20,10 @@ describe("isAllowed - basic functionality", () => {
     expect(actual).to.equal(expected);
   });
   it("Return true when date is weekend", () => {
-    const date= new Date()
-    const expected = undefined;
-    const actual = isAllowed();
+    
+    const validDate = new Date("2022-06-26T11:46:00.000Z");
+    const expected = true;
+    const actual = isAllowed(0, validDate);
     expect(actual).to.equal(expected);
   });
-  
 });

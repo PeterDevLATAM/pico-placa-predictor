@@ -1,6 +1,4 @@
-import { isValidDate } from "./validate-date";
-import { isValidPlate } from "./validate-plate";
-import { data } from "../utils/temp-data";
+import { DATA } from "../utils/temp-data.js";
 
 /**
  *
@@ -9,6 +7,15 @@ import { data } from "../utils/temp-data";
  * @return {boolean}
  */
 export const isAllowed = (lastDigitOfPlate, date) => {
-  if (lastDigitOfPlate === "" || date === "" || !lastDigitOfPlate || !date)
+  if (
+    lastDigitOfPlate === "" ||
+    date === "" ||
+    lastDigitOfPlate === undefined ||
+    date === undefined
+  ) {
     return undefined;
+  }
+  if (date.getDay() === 0 || date.getDate() === 6) return true;
 };
+
+
