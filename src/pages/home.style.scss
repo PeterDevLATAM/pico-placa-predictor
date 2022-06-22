@@ -1,0 +1,10 @@
+@import "../sass/variables";
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 50% 1fr;
+
+  padding-top: 27.8rem;
+  justify-items: center;
+  grid-row-gap: 9.8rem;
+}
