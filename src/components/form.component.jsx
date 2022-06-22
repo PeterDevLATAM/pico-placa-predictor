@@ -4,18 +4,21 @@ import { useState } from "react";
 
 import React from "react";
 import Btn from "./btn.component";
+import { useConsult } from "../hooks/useConsult";
 
 export default function Form() {
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    const dateObject= new Date(`${date}T${time}:00Z`)
-    //Call to action
+  const { result, queryData, error } = useConsult();
 
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`${date}T${time}:00`);
+    const dateObject = new Date(`${date}T${time}:00`);
+    //Call to action
+    queryData(plate, dateObject);
+  };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -46,6 +49,9 @@ export default function Form() {
           />
         </label>
       </div>
+      {result && <div className="test">OKOKOK</div>}
+      {!result && <div className="test">NOT OK</div>}
+      {error && <div className="test">{error}</div>}
       <Btn />
     </form>
   );
