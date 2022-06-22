@@ -10,7 +10,7 @@ export default function Form() {
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const { result, queryData, error } = useConsult();
+  const { result, queryData, error, setError } = useConsult();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +29,10 @@ export default function Form() {
             type="text"
             placeholder="AAA######"
             className="inputs__input inputs__input--left"
-            onChange={(e) => setPlate(e.target.value)}
+            onChange={(e) => {
+              setPlate(e.target.value);
+              setError(false);
+            }}
           />
         </label>
         <label className="inputs__label">
@@ -37,7 +40,10 @@ export default function Form() {
           <input
             type="date"
             className="inputs__input"
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => {
+              setDate(e.target.value);
+              setError(false);
+            }}
           />
         </label>
         <label className="inputs__label ">
@@ -45,7 +51,10 @@ export default function Form() {
           <input
             type="time"
             className="inputs__input inputs__input--right"
-            onChange={(e) => setTime(e.target.value)}
+            onChange={(e) => {
+              setTime(e.target.value);
+              setError(false);
+            }}
           />
         </label>
       </div>

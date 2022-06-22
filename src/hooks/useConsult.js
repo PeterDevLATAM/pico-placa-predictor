@@ -7,7 +7,7 @@ import {isValidPlate} from "../services/validate-plate.js"
 export  function useConsult() {
   const [result, setResult]=useState(false);
   const [onGoing, setOnGoing]=useState(true);
-  const [error, setError]=useState(true);
+  const [error, setError]=useState(false);
 
   const queryData=(plate, date)=>{
     console.log("query")
@@ -24,5 +24,5 @@ export  function useConsult() {
     setResult(isAllowed(queryPlate.plate.getLastDigit(), date))
   }
  
-  return {result, queryData, error}
+  return {result, queryData, error, setError}
 }
