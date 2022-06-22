@@ -14,6 +14,7 @@ export default function Form() {
     e.preventDefault();
     const dateObject= new Date(`${date}T${time}:00Z`)
     //Call to action
+    console.log(plate, dateObject)
 
   }
 
