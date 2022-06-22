@@ -2,8 +2,8 @@ import { QUERY_ACTION_TYPES } from "./query.types.js";
 
 export const QUERY_INITIAL_STATE = {
   onGoing: true,
-  denied: false,
   approved: false,
+  err: null,
 };
 
 export const queryReducer = (state = QUERY_INITIAL_STATE, action = {}) => {
