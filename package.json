@@ -16,7 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "unit-test": "",
+    "unit-test": "npx mocha 'src/services/*.test.js' --recursive --require @babel/register",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
