@@ -10,6 +10,7 @@ export  function useConsult() {
   const [error, setError]=useState(true);
 
   const queryData=(plate, date)=>{
+    console.log("query")
     const queryPlate= isValidPlate(plate);
     if(!queryPlate.isValid){
       setError("Invalid Plate")
@@ -20,9 +21,8 @@ export  function useConsult() {
       setError(queryDate.err)
       return;
     }
-    
-
+    setResult(isAllowed(queryPlate.plate.getLastDigit(), date))
   }
  
-  return {result, queryData}
+  return {result, queryData, error}
 }
