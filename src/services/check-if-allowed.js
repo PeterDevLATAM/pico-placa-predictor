@@ -15,7 +15,13 @@ export const isAllowed = (lastDigitOfPlate, date) => {
   ) {
     return undefined;
   }
+  const day = date.getDay();
+  const hour = date.toLocaleTimeString();
+
   if (date.getDay() === 0 || date.getDate() === 6) return true;
+   console.log( hour)
+   console.log(new Date().toLocaleTimeString())
+
 };
 
 

@@ -20,10 +20,16 @@ describe("isAllowed - basic functionality", () => {
     expect(actual).to.equal(expected);
   });
   it("Return true when date is weekend", () => {
-    
     const validDate = new Date("2022-06-26T11:46:00.000Z");
     const expected = true;
     const actual = isAllowed(0, validDate);
+    expect(actual).to.equal(expected);
+  });
+  it("Return true when valid date and time", () => {
+    const validDateTime = new Date("2022-06-20T07:07:00.000Z");
+    const validPlate = 3;
+    const expected = true;
+    const actual = isAllowed(validPlate, validDateTime);
     expect(actual).to.equal(expected);
   });
 });
