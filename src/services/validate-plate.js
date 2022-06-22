@@ -1,7 +1,11 @@
 /**
- * 
- * @param {string} str 
- * @returns { isValid: {boolean}, letters: {string}, numbers: {array}}
+ * @typedef {Object} Response
+ * @property {boolean} isValid -isValid
+ * @property {string} letters - Letters of the plate
+ * @property {Array} numbers - Numbers of the plate
+ *
+ * @param {string} str - Date
+ * @return {Response} 
  */
 export const isValidPlate = (str) => {
   if (str === "" || str.length > 7) {
