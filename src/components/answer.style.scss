@@ -1,0 +1,29 @@
+@import "../sass/variables";
+
+.answer {
+  grid-column: 2/3;
+  height: 10rem;
+  width: 61.2rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5rem;
+  justify-content: start;
+  
+  &__icon {
+    height: 10rem;
+    width: 10rem;
+    fill: $color-green;
+    margin-right: 3.6rem;
+  }
+  &__text {
+    font-size: 3.6rem;
+    font-weight: 500;
+    &--denied {
+      color: $color-red;
+    }
+    &--approved {
+      color: $color-green;
+    }
+  }
+}

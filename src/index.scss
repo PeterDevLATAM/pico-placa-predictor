@@ -1,0 +1,30 @@
+@import "./sass/variables";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @media only screen and (max-width: 900px) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: 570px) {
+    font-size: 40%;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 35%;
+  }
+
+}
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: $color-white;
+
+}

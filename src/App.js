@@ -1,9 +1,11 @@
 import './App.css';
+import Home from './pages/home.component';
+import "./sass/_variables.scss"
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Home/>
     </div>
   );
 }
