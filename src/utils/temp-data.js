@@ -6,12 +6,12 @@ export const DATA = {
       2: true,
     },
     firstPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "06:00:00",
+      end: "09:30:00",
     },
     secondPeriod: {
-      start: "16:00",
-      end: "21:00",
+      start: "16:00:00",
+      end: "21:00:00",
     },
   },
   2: {
@@ -20,12 +20,12 @@ export const DATA = {
       4: true,
     },
     firstPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "06:00:00",
+      end: "09:30:00",
     },
     secondPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "16:00:00",
+      end: "21:00:00",
     },
   },
   3: {
@@ -34,12 +34,12 @@ export const DATA = {
       6: true,
     },
     firstPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "06:00:00",
+      end: "09:30:00",
     },
     secondPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "16:00:00",
+      end: "21:00:00",
     },
   },
   4: {
@@ -48,12 +48,12 @@ export const DATA = {
       8: true,
     },
     firstPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "06:00:00",
+      end: "09:30:00",
     },
     secondPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "16:00:00",
+      end: "21:00:00",
     },
   },
   5: {
@@ -62,12 +62,12 @@ export const DATA = {
       0: true,
     },
     firstPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "06:00:00",
+      end: "09:30:00",
     },
     secondPeriod: {
-      start: "06:00",
-      end: "09:30",
+      start: "16:00:00",
+      end: "21:00:00",
     },
   },
 
