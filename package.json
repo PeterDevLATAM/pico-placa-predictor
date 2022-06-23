@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "unit-test": "npx mocha 'src/services/*.test.js'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +46,9 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
+    "@testing-library/cypress": "^8.0.3",
     "chai": "^4.3.6",
+    "cypress": "^10.2.0",
     "mocha": "^10.0.0"
   }
 }

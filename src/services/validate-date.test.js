@@ -14,7 +14,11 @@ describe("isValidDate - basic functionality", () => {
     expect(actual).to.deep.equal(expected);
   });
   it("Return response.isValid : false when passed undefined", () => {
-    const expected = { isValid: false, err: "Invalid date or time", date: null };
+    const expected = {
+      isValid: false,
+      err: "Invalid date or time",
+      date: null,
+    };
     const actual = isValidDate(undefined);
     expect(actual).to.deep.equal(expected);
   });
@@ -37,6 +41,17 @@ describe("isValidDate - basic functionality", () => {
       date: dateOK,
     };
     const actual = isValidDate(dateOK);
+    expect(actual).to.deep.equal(expected);
+  });
+  
+  it("Return response.isValid : false when Invalid Date", () => {
+    const dateNOK = new Date("");
+    const expected = {
+      isValid: false,
+      err: "Invalid date or time",
+      date: null,
+    };
+    const actual = isValidDate(dateNOK);
     expect(actual).to.deep.equal(expected);
   });
 });
