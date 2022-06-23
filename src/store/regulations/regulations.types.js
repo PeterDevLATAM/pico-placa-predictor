@@ -1,0 +1,3 @@
+export const REGULATIONS_ACTION_TYPES={
+  SET_REGULATIONS: "regulations/SET_REGULATIONS"
+}

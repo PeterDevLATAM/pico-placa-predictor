@@ -10,9 +10,10 @@ const getComparingDate = (timeString, date) => {
  * 
  * @param {number} lastDigitOfPlate
  * @param {Date} date
+ * @param {Object} data
  * @return {boolean}
  */
-export const isAllowed = (lastDigitOfPlate, date) => {
+export const isAllowed = (lastDigitOfPlate, date, data) => {
   if (
     lastDigitOfPlate === undefined ||
     date === undefined ||
@@ -25,14 +26,14 @@ export const isAllowed = (lastDigitOfPlate, date) => {
 
   if (day === 0 || day === 6) return true;
 
-  if (!DATA[day].forbidenPlates[lastDigitOfPlate]) {
+  if (!data[day].forbidenPlates[lastDigitOfPlate]) {
     return true;
   }
   //Check if not forbidden
-  const start1 = getComparingDate(DATA[day].firstPeriod.start, date);
-  const end1 = getComparingDate(DATA[day].firstPeriod.end, date);
-  const start2 = getComparingDate(DATA[day].secondPeriod.start, date);
-  const end2 = getComparingDate(DATA[day].secondPeriod.end, date);
+  const start1 = getComparingDate(data[day].firstPeriod.start, date);
+  const end1 = getComparingDate(data[day].firstPeriod.end, date);
+  const start2 = getComparingDate(data[day].secondPeriod.start, date);
+  const end2 = getComparingDate(data[day].secondPeriod.end, date);
 
   if (
     DATA[day].forbidenPlates[lastDigitOfPlate] &&
