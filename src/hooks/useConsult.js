@@ -9,17 +9,14 @@ import { setQueryStatus } from "../store/query/query.actions.js";
 export function useConsult() {
   const dispatch = useDispatch();
 
-
-
   const queryData = (plate, date) => {
-    console.log("query");
     const queryPlate = isValidPlate(plate);
     if (!queryPlate.isValid) {
       dispatch(
         setQueryStatus({
           onGoing: false,
           approved: false,
-          err: "Invalid Plate",
+          err: "Invalid License Plate",
         })
       );
       return;

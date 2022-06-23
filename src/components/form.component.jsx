@@ -4,19 +4,26 @@ import { useState } from "react";
 
 import React from "react";
 import Btn from "./btn.component";
-import { useConsult } from "../hooks/useConsult";
+import { useConsult } from "../hooks/useConsult.js";
+import { useDispatch } from "react-redux";
+import { setQueryStatus } from "../store/query/query.actions";
 
 export default function Form() {
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const {queryData } = useConsult();
+  const dispatch = useDispatch();
+
+  const { queryData } = useConsult();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateObject = new Date(`${date}T${time}:00`);
     //Call to action
     queryData(plate, dateObject);
+  };
+  const resetResult = () => {
+    dispatch(setQueryStatus({ onGoing: true, approved: false, err: null }));
   };
 
   return (
@@ -30,6 +37,7 @@ export default function Form() {
             className="inputs__input inputs__input--left"
             onChange={(e) => {
               setPlate(e.target.value);
+              resetResult();
             }}
           />
         </label>
@@ -40,6 +48,7 @@ export default function Form() {
             className="inputs__input"
             onChange={(e) => {
               setDate(e.target.value);
+              resetResult();
             }}
           />
         </label>
@@ -50,6 +59,7 @@ export default function Form() {
             className="inputs__input inputs__input--right"
             onChange={(e) => {
               setTime(e.target.value);
+              resetResult();
             }}
           />
         </label>
