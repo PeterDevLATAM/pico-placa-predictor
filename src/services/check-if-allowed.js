@@ -13,10 +13,10 @@ const getComparingDate = (timeString, date) => {
  */
 export const isAllowed = (lastDigitOfPlate, date) => {
   if (
-    lastDigitOfPlate === "" ||
-    date === "" ||
     lastDigitOfPlate === undefined ||
-    date === undefined
+    date === undefined ||
+    lastDigitOfPlate === "" ||
+    date === ""
   ) {
     return undefined;
   }
