@@ -24,7 +24,7 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const dateObject = new Date(`${date}T${time}:00`);
+    const dateObject = new Date(`${date}T${time}:00Z`);
     //Call to action
     queryData(plate, dateObject);
   };

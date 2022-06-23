@@ -1,7 +1,7 @@
 import { DATA } from "../utils/temp-data.js";
 const getComparingDate = (timeString, date) => {
   const formatYmd = date.toISOString().slice(0, 10);
-  const comparingDate = new Date(`${formatYmd}T${timeString}.000`);
+  const comparingDate = new Date(`${formatYmd}T${timeString}.000Z`);
   return comparingDate;
 };
 
@@ -36,7 +36,7 @@ export const isAllowed = (lastDigitOfPlate, date) => {
 
   if (
     DATA[day].forbidenPlates[lastDigitOfPlate] &&
-    ((date >= start1 && date < end1) || (date >= start2 && date < end2))
+    ((date >= start1 && date <= end1) || (date >= start2 && date <= end2))
   ) {
     return false;
   } else {
