@@ -35,7 +35,7 @@ export const isAllowed = (lastDigitOfPlate, date) => {
 
   if (
     DATA[day].forbidenPlates[lastDigitOfPlate] &&
-    ((date = start1 && date < end1) || (date > start2 && date < end2))
+    ((date >= start1 && date < end1) || (date >= start2 && date < end2))
   ) {
     return false;
   } else {
