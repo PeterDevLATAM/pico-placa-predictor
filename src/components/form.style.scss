@@ -8,7 +8,6 @@
 .inputs{
   grid-column: 2/3;
   display: flex;
-
   
   &__label{
     &:not(:last-child){
@@ -35,6 +34,10 @@
     &::placeholder{
       font-family: inherit;
       font-size: 1.6rem;
+      // color: $color-dark-blue;
+    }
+    &:active, &:focus {
+      outline-color: $color-dark-blue;
     }
 
     &--left{

@@ -11,4 +11,14 @@
   border: none;
   color: $color-white;
   border-radius: 1rem;
+  transition: all .2s;
+
+  &:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 1rem rgba(black, .3);
+    background-color: $color-red-shadow;
+  }
+  &:pr{
+    transform: translateY(1px);
+  }
 }
