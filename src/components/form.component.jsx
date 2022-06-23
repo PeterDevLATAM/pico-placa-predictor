@@ -7,15 +7,17 @@ import Btn from "./btn.component";
 import { useConsult } from "../hooks/useConsult.js";
 import { useDispatch } from "react-redux";
 import { setQueryStatus } from "../store/query/query.actions";
+import { useSelector } from "react-redux";
+import { selectQueryReducer } from "../store/query/query.selector";
 
 export default function Form() {
-
   // Local State
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
   const dispatch = useDispatch();
+  const { onGoing } = useSelector(selectQueryReducer);
 
   // Custom Hook
   const { queryData } = useConsult();
@@ -29,7 +31,10 @@ export default function Form() {
 
   // reset Query
   const resetResult = () => {
-    dispatch(setQueryStatus({ onGoing: true, approved: false, err: null }));
+    // checking if ongoing to avoid changing state
+    if (!onGoing) {
+      dispatch(setQueryStatus({ onGoing: true, approved: false, err: null }));
+    }
   };
 
   return (
