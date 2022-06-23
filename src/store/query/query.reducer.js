@@ -11,7 +11,7 @@ export const queryReducer = (state = QUERY_INITIAL_STATE, action = {}) => {
 
   switch (type) {
     case QUERY_ACTION_TYPES.SET_QUERY_STATUS:
-      return { ...state, payload };
+      return { ...state, ...payload };
     default:
       return state;
   }

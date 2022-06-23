@@ -1,28 +1,43 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import {isAllowed} from "../services/check-if-allowed.js"
-import {isValidDate} from "../services/validate-date.js"
-import {isValidPlate} from "../services/validate-plate.js"
+import { isAllowed } from "../services/check-if-allowed.js";
+import { isValidDate } from "../services/validate-date.js";
+import { isValidPlate } from "../services/validate-plate.js";
+import { useDispatch } from "react-redux";
+import { setQueryStatus } from "../store/query/query.actions.js";
 
-export  function useConsult() {
-  const [result, setResult]=useState(false);
-  const [onGoing, setOnGoing]=useState(true);
-  const [error, setError]=useState(false);
+export function useConsult() {
+  const dispatch = useDispatch();
 
-  const queryData=(plate, date)=>{
-    console.log("query")
-    const queryPlate= isValidPlate(plate);
-    if(!queryPlate.isValid){
-      setError("Invalid Plate")
+
+
+  const queryData = (plate, date) => {
+    console.log("query");
+    const queryPlate = isValidPlate(plate);
+    if (!queryPlate.isValid) {
+      dispatch(
+        setQueryStatus({
+          onGoing: false,
+          approved: false,
+          err: "Invalid Plate",
+        })
+      );
       return;
     }
-    const queryDate= isValidDate(date);
-    if(!queryDate.isValid){
-      setError(queryDate.err)
+    const queryDate = isValidDate(date);
+    if (!queryDate.isValid) {
+      dispatch(
+        setQueryStatus({ onGoing: false, approved: false, err: queryDate.err })
+      );
       return;
     }
-    setResult(isAllowed(queryPlate.plate.getLastDigit(), date))
-  }
- 
-  return {result, queryData, error, setError}
+    const answer = isAllowed(queryPlate.plate.getLastDigit(), date);
+    if (answer) {
+      dispatch(setQueryStatus({ onGoing: false, approved: true, err: null }));
+    } else {
+      dispatch(setQueryStatus({ onGoing: false, approved: false, err: null }));
+    }
+  };
+
+  return { queryData};
 }

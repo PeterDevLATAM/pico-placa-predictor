@@ -10,11 +10,10 @@ export default function Form() {
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const { result, queryData, error, setError } = useConsult();
+  const {queryData } = useConsult();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`${date}T${time}:00`);
     const dateObject = new Date(`${date}T${time}:00`);
     //Call to action
     queryData(plate, dateObject);
@@ -31,7 +30,6 @@ export default function Form() {
             className="inputs__input inputs__input--left"
             onChange={(e) => {
               setPlate(e.target.value);
-              setError(false);
             }}
           />
         </label>
@@ -42,7 +40,6 @@ export default function Form() {
             className="inputs__input"
             onChange={(e) => {
               setDate(e.target.value);
-              setError(false);
             }}
           />
         </label>
@@ -53,14 +50,10 @@ export default function Form() {
             className="inputs__input inputs__input--right"
             onChange={(e) => {
               setTime(e.target.value);
-              setError(false);
             }}
           />
         </label>
       </div>
-      {result && <div className="test">OKOKOK</div>}
-      {!result && <div className="test">NOT OK</div>}
-      {error && <div className="test">{error}</div>}
       <Btn />
     </form>
   );
