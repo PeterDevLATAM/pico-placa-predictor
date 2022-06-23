@@ -6,7 +6,8 @@ const getComparingDate = (timeString, date) => {
 };
 
 /**
- *
+ * 
+ * 
  * @param {number} lastDigitOfPlate
  * @param {Date} date
  * @return {boolean}
