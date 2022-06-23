@@ -23,6 +23,14 @@ It tells you if you are allowed to circulate given the license plate number, dat
 
 </div>
 
+<div align="center">
+
+https://user-images.githubusercontent.com/101288216/175425725-381b6364-7260-4ef2-982c-c1c032e27ef4.mov
+
+</div>
+
+
+
 ## Description
 
 The forontend is constructed using React.js and SASS, Redux for state management, Mocha and Chai for unit testing, Cypress for E2E testing.
