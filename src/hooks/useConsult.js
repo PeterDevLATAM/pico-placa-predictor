@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { isAllowed } from "../services/check-if-allowed.js";
 import { isValidDate } from "../services/validate-date.js";
 import { isValidPlate } from "../services/validate-plate.js";
@@ -28,7 +26,9 @@ export function useConsult() {
       );
       return;
     }
+
     const answer = isAllowed(queryPlate.plate.getLastDigit(), date);
+
     if (answer) {
       dispatch(setQueryStatus({ onGoing: false, approved: true, err: null }));
     } else {

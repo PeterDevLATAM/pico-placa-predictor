@@ -9,11 +9,15 @@ import { useDispatch } from "react-redux";
 import { setQueryStatus } from "../store/query/query.actions";
 
 export default function Form() {
+
+  // Local State
   const [plate, setPlate] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+
   const dispatch = useDispatch();
 
+  // Custom Hook
   const { queryData } = useConsult();
 
   const handleSubmit = (e) => {
@@ -22,6 +26,8 @@ export default function Form() {
     //Call to action
     queryData(plate, dateObject);
   };
+
+  // reset Query
   const resetResult = () => {
     dispatch(setQueryStatus({ onGoing: true, approved: false, err: null }));
   };
