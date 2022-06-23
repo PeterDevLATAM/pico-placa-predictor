@@ -8,7 +8,9 @@ export function useConsult() {
   const dispatch = useDispatch();
 
   const queryData = (plate, date) => {
+
     const queryPlate = isValidPlate(plate);
+
     if (!queryPlate.isValid) {
       dispatch(
         setQueryStatus({
@@ -19,7 +21,9 @@ export function useConsult() {
       );
       return;
     }
+
     const queryDate = isValidDate(date);
+
     if (!queryDate.isValid) {
       dispatch(
         setQueryStatus({ onGoing: false, approved: false, err: queryDate.err })
@@ -34,6 +38,7 @@ export function useConsult() {
     } else {
       dispatch(setQueryStatus({ onGoing: false, approved: false, err: null }));
     }
+    
   };
 
   return { queryData};

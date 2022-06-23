@@ -9,7 +9,7 @@
   background-color: white;
   border-radius: 5rem;
   justify-content: start;
-  
+
   &__icon {
     height: 10rem;
     width: 10rem;
@@ -28,7 +28,7 @@
   }
 }
 
-.error{
+.error {
   grid-column: 2/3;
   font-size: 2.8rem;
   color: $color-red;

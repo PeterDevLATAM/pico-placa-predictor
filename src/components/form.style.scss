@@ -1,28 +1,27 @@
 @import "../sass/variables";
-.form{
+.form {
   grid-column: 2/3;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.inputs{
+.inputs {
   grid-column: 2/3;
   display: flex;
-  
-  &__label{
-    &:not(:last-child){
+
+  &__label {
+    &:not(:last-child) {
       border-right: 1px solid $color-grey;
     }
-    
   }
-  &__text{
+  &__text {
     color: $color-text;
     padding-bottom: 1rem;
     font-weight: 400;
     font-size: 2rem;
     padding-left: 4rem;
   }
-  &__input{
+  &__input {
     font-family: inherit;
     border: none;
     width: 22rem;
@@ -30,22 +29,21 @@
     padding: 0 5rem;
     text-transform: uppercase;
 
-
-    &::placeholder{
+    &::placeholder {
       font-family: inherit;
       font-size: 1.6rem;
       // color: $color-dark-blue;
     }
-    &:active, &:focus {
+    &:active,
+    &:focus {
       outline-color: $color-dark-blue;
     }
 
-    &--left{
+    &--left {
       border-radius: 1rem 0 0 1rem;
     }
-    &--right{
-      border-radius: 0 1rem 1rem 0 ;
+    &--right {
+      border-radius: 0 1rem 1rem 0;
     }
-    
   }
 }
