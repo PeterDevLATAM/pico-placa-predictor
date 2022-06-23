@@ -81,4 +81,23 @@ describe("isAllowed - basic functionality", () => {
     expect(actual).to.equal(expected);
   });
 
+  for (let i = 0; i < 24; i++) {
+
+    const hh = i < 10 ? `0${i}` : `${i}`;
+    let expectedValue;
+
+    if ((i >= 6 && i <= 9) || (i >= 16 && i <= 21)) {
+      expectedValue = false;
+    } else {
+      expectedValue = true;
+    }
+
+    it(`Return ${expectedValue} for ${hh} hours`, () => {
+      const notValidDateTime = new Date(`2022-06-28T${hh}:00:00.000Z`);
+      const notValidPlate = 3;
+      const expected = expectedValue;
+      const actual = isAllowed(notValidPlate, notValidDateTime);
+      expect(actual).to.equal(expected);
+    });
+  }
 });
