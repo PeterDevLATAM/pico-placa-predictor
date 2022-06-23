@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+<!-- markdownlint-configure-file {
+  "MD013": {
+    "code_blocks": false,
+    "tables": false
+  },
+  "MD033": false,
+  "MD041": false
+} -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+# Consult Pico y Placa
 
-In the project directory, you can run:
+Consult Pico y Placa is an **oversized &nbsp;&nbsp;🔫 &nbsp;&nbsp; to kill a &nbsp;&nbsp;🪰&nbsp;&nbsp;**
 
-### `npm start`
+It tells you if you are allowed to circulate given the license plate number, date and time<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Description](#description) •
+[Installation](#installation) •
+[Executing](#executing) •
+[E2E Testing](#e2e-testing) •
+[Unit Testing](#unit-testing)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</div>
 
-### `npm test`
+## Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The forontend is constructed using React.js and SASS, Redux for state management, Mocha and Chai for unit testing, Cypress for E2E testing.
+The backend is a very simple Express rest API server. ( A total overkill... there are defenitely more efficient ways of doing it but of course isn't the point.)
+<br/>
+The data is structured in a hash table, so lookup time is O(1)... ( I obviously say this to show off )
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### _Step 1: Install Frontend dependencies_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+````sh
+    $ npm install 
+ ````  
+### _Step 2: Install Backend dependencies_
+````sh
+    $ cd server 
+    $ npm install 
+ ````  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Executing 
+### _Step 1: Run Server in a new tab..._
 
-### `npm run eject`
+````sh
+    $ npm run start-server
+ ````  
+### _Step 2: Run FrontEnd in a new tab..._
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+````sh
+    $ npm start
+ ```` 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ## E2E testing 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### _Open Cypress in a new tab..._
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+````sh
+    $ npm run cypress:open
+ ```` 
+Execute e2e tests **querying.cy.js**
 
-## Learn More
+ ## Unit Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+````sh
+    $ npm run unit-test
+ ```` 
