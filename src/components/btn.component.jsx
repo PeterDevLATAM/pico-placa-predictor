@@ -1,9 +1,5 @@
-import "./btn.style.scss"
+import "./btn.style.scss";
 
 export default function Btn() {
-  return (
-    <button className="btn">
-      Consult
-    </button>
-  )
+  return <button className="btn">Consult</button>;
 }
