@@ -28,7 +28,6 @@ describe("isValidPlate - basic functionality", () => {
     const plate = new Plate("AAA", [1, 2, 3, 4]);
     const expected = { isValid: true, plate };
     const actual = isValidPlate("AAA1234");
-    console.log(actual)
     expect(actual).to.deep.equal(expected);
   });
 });

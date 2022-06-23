@@ -2,6 +2,7 @@
 
 import { expect } from "chai";
 import { isAllowed } from "./check-if-allowed.js";
+import { DATA } from "../utils/temp-data.js";
 
 describe("isAllowed - basic functionality", () => {
   it("Return undefined when passed an empty string", () => {
@@ -22,14 +23,14 @@ describe("isAllowed - basic functionality", () => {
   it("Return true when date is weekend", () => {
     const validDate = new Date("2022-06-26T11:46:00.000Z");
     const expected = true;
-    const actual = isAllowed(0, validDate);
+    const actual = isAllowed(0, validDate, DATA);
     expect(actual).to.equal(expected);
   });
   it("Return true when valid date", () => {
     const validDateTime = new Date("2022-06-20T07:07:00.000Z");
     const validPlate = 3;
     const expected = true;
-    const actual = isAllowed(validPlate, validDateTime);
+    const actual = isAllowed(validPlate, validDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -37,7 +38,7 @@ describe("isAllowed - basic functionality", () => {
     const notValidDateTime = new Date("2022-07-04T08:00:00.000Z");
     const notValidPlate = 2;
     const expected = false;
-    const actual = isAllowed(notValidPlate, notValidDateTime);
+    const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -45,7 +46,7 @@ describe("isAllowed - basic functionality", () => {
     const validDateTime = new Date("2022-08-02T22:00:00.000Z");
     const validPlate = 4;
     const expected = true;
-    const actual = isAllowed(validPlate, validDateTime);
+    const actual = isAllowed(validPlate, validDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -53,7 +54,7 @@ describe("isAllowed - basic functionality", () => {
     const notValidDateTime = new Date("2022-06-24T06:00:00.000Z");
     const notValidPlate = 9;
     const expected = false;
-    const actual = isAllowed(notValidPlate, notValidDateTime);
+    const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -61,7 +62,7 @@ describe("isAllowed - basic functionality", () => {
     const notValidDateTime = new Date("2022-06-24T16:00:00.000Z");
     const notValidPlate = 9;
     const expected = false;
-    const actual = isAllowed(notValidPlate, notValidDateTime);
+    const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -69,7 +70,7 @@ describe("isAllowed - basic functionality", () => {
     const notValidDateTime = new Date("2022-06-28T09:30:00.000Z");
     const notValidPlate = 4;
     const expected = false;
-    const actual = isAllowed(notValidPlate, notValidDateTime);
+    const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
@@ -77,12 +78,11 @@ describe("isAllowed - basic functionality", () => {
     const notValidDateTime = new Date("2022-06-28T21:00:00.000Z");
     const notValidPlate = 3;
     const expected = false;
-    const actual = isAllowed(notValidPlate, notValidDateTime);
+    const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
     expect(actual).to.equal(expected);
   });
 
   for (let i = 0; i < 24; i++) {
-
     const hh = i < 10 ? `0${i}` : `${i}`;
     let expectedValue;
 
@@ -96,7 +96,7 @@ describe("isAllowed - basic functionality", () => {
       const notValidDateTime = new Date(`2022-06-28T${hh}:00:00.000Z`);
       const notValidPlate = 3;
       const expected = expectedValue;
-      const actual = isAllowed(notValidPlate, notValidDateTime);
+      const actual = isAllowed(notValidPlate, notValidDateTime, DATA);
       expect(actual).to.equal(expected);
     });
   }

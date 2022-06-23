@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import Home from "./pages/home.component.jsx";
 import "./sass/_variables.scss";
+import { setRegulations } from "./store/regulations/regulations.actions.js";
 
 function App() {
-  const [state, setState] = useState({});
+  const dispatch = useDispatch();
   useEffect(() => {
     fetch("http://localhost:3001/api/regulations")
       .then((res) => res.json())
-      .then((res) => setState(res));
+      .then((res) => dispatch(setRegulations(res)));
   }, []);
-  console.log(state);
   return (
     <div className="App">
       <Home />

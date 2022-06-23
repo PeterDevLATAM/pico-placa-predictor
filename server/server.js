@@ -11,7 +11,6 @@ app.use(function(req, res, next) {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-console.log(DATA)
 app.get('/api/regulations', (req, res) => {
   res.send(DATA);
 });

@@ -1,4 +1,4 @@
-import { REGULATIONS_ACTION_TYPES } from "./regulations.types";
+import { REGULATIONS_ACTION_TYPES } from "./regulations.types.js";
 
 export const REGULATIONS_INITIAL_STATE={
   data:{}
